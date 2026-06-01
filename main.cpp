@@ -124,7 +124,7 @@ int main(){
           cout << "\n1. Add Student"<<endl;
           cout << "\n2. Display All Students"<<endl;
           //cout << "\n3. Delete Student"<<endl;
-          cout << "\n3. Search Student 🔍"<<endl;
+          cout << "\n3. Search Student "<<endl;
           cout << "\n4. EXIT\n\n" <<endl;
           cout << "ENTER YOUR CHOICE"<<endl;
 
@@ -155,9 +155,5 @@ int main(){
                 default:
                    cout<<"Invalid Choice!";   
           }
-       
-   
     
-
-
 }
