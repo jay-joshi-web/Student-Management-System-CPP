@@ -82,10 +82,10 @@ using namespace std;
             cin >> n;
 
             for(int i=0; i<n; i++){
-                cout<< "\t---" << i << "th Student---\t"<<endl;
+                cout<< "\t--- New Student ---\t"<<endl;
                 s[i].getInfo();
             }
-    }
+            cout<< "\nRecord added succesfully!" <<endl;    }
 
     void displayAllStudent(){
         ifstream fin("student.txt");
@@ -122,9 +122,9 @@ int main(){
    
           cout << "\t----MENU----\t"<<endl;
           cout << "\n1. Add Student"<<endl;
-          cout << "\n2. Display All Students"<<endl;
+          cout << "\n2. Display All Students Records"<<endl;
           //cout << "\n3. Delete Student"<<endl;
-          cout << "\n3. Search Student 🔍"<<endl;
+          cout << "\n3. Search Student Record 🔍"<<endl;
           cout << "\n4. EXIT\n\n" <<endl;
           cout << "ENTER YOUR CHOICE"<<endl;
 
