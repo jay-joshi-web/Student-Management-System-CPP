@@ -107,6 +107,34 @@ using namespace std;
         
     }
 
+    void deleteStudent(int targetRollNo){
+        ifstream fin("student.txt");
+        ofstream fout("temp.txt");
+        string tempname;
+        int temprollno;
+        int tempmarks;
+
+        while(getline(fin, tempname)){
+            fin >> temprollno;
+            fin >> tempmarks;
+            fin.ignore();
+
+            if(temprollno == targetRollNo){
+                continue;
+            }else{
+                fout << tempname <<endl;
+                fout << temprollno <<endl;
+                fout << tempmarks <<endl;
+            }
+        }
+        fin.close();
+        fout.close();
+
+        remove("student.txt");
+        rename("temp.txt","student.txt");
+        cout << "\nRecord deleted successfully!\n\n" <<endl;
+    }
+
 int main(){ 
 
     Student s[100];
@@ -125,7 +153,8 @@ int main(){
           cout << "\n2. Display All Students Records"<<endl;
           //cout << "\n3. Delete Student"<<endl;
           cout << "\n3. Search Student Record "<<endl;
-          cout << "\n4. EXIT\n\n" <<endl;
+          cout << "\n4. Delete Student Record "<<endl;
+          cout << "\n5. EXIT\n\n" <<endl;
           cout << "ENTER YOUR CHOICE"<<endl;
 
           cin>> choice;
@@ -148,6 +177,13 @@ int main(){
                    break;
 
                 case 4:
+                   int Target;
+                   cout<< "\n\nENTER ROLL NUMBER TO DELETE STUDENT RECORD:-  ";
+                   cin >> Target;
+                   deleteStudent(Target);
+                   break;
+
+                case 5:
                    cout << "EXITING..." <<endl;
                    return 0;
                    break;
